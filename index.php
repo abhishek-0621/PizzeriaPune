@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
 <?php 
@@ -18,7 +14,7 @@
     <div class="container">
 	<div class="row">
 		<div class="col-md-4 login-sec">
-			<i><h6 class="text-center">Nard Nard Foodhouse</h6></i>
+			<i><h6 class="text-center">Pizzeria Pune</h6></i>
 		    <h2 class="text-center">Login Now</h2>
 
 		    <form class="login-form" id="login" action="login.php" method="post">
@@ -43,8 +39,8 @@
   </div>
   
 </form>
-<div class="small-text"> <p class="text-center text-muted">Not a member? <i class="fa fa-heart"></i> <a name="registerModal_Test" href="#" data-toggle="modal" data-target="#registerModal">
-  Register an Account
+<div class="small-text"> <p class="text-center text-muted">Not a member? <a name="registerModal_Test" href="#" data-toggle="modal" data-target="#registerModal">
+  Create an Account
 </a></p></div>
 
 </div>
