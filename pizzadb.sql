@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foodorderingsystem`
+-- Database: `pizzadb`
 --
 
 -- --------------------------------------------------------
@@ -54,7 +54,6 @@ INSERT INTO `users` (`first_name`, `last_name`, `id`, `image_name`, `email`, `ro
 ('Rutuja', 'Khire', 2, '2.jpg', 'rutuja@gmail.com', 'user', '12345', '101, Rahul Complex, 14, MG Road, Pune', 20, '2468013579', '2020-11-09 15:00:27', 0),
 ('Abhishek', 'Lalwani', 3, '3.jpg', 'abhi@gmail.com', 'user', '12345', '2, Swanand Bunglow , SB Road, Pune', 21, '2468013579', '2020-11-09 08:15:05', 0),
 ('Ashmit', 'Khobragade', 4, '4.jpg', 'ash@gmail.comgogo', 'user', '12345', '505, Aarya Apartments, JM Road, Pune', 21, '2468013579', '2020-11-09 08:18:08', 0);
-
 
 --
 -- Table structure for table `products`
@@ -121,7 +120,6 @@ INSERT INTO `orders` (`id`, `user_id`, `date`, `shipping_address`, `first_name`,
  (3, 2, '2021-11-27 02:50:47', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 550, 'close', 0, 1, 0),
  (4, 2, '2020-12-04 02:50:55', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 400, 'close', 0, 1, 0),
  (5, 2, '2020-12-06 04:23:21', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 1150, 'close', 0, 1, 0); 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `order_list`
