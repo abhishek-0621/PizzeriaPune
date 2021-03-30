@@ -31,7 +31,7 @@
 			}
 			else
 			{
-				$sql = "INSERT INTO users(`email`, `pass`,`first_name`,`last_name`,`address`,`age`,`contact_no`)VALUES ('$email', '$pass','$first_name','$last_name', '$adress', '$age', '$contact_no')";		
+				$sql = "INSERT INTO users(`email`, `pass`,`first_name`,`last_name`,`address`,`age`,`contact_no`)VALUES ('$email', '$pass','$first_name','$last_name', '$address', '$age', '$contact_no')";		
 				mysqli_query($conn, $sql);
 
 
