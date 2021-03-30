@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2018 at 03:37 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -25,114 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `shipping_address` varchar(100) NOT NULL,
-  `first_name` varchar(100) DEFAULT NULL,
-  `last_name` varchar(100) DEFAULT NULL,
-  `total_price` float NOT NULL,
-  `status` varchar(100) NOT NULL DEFAULT 'pending',
-  `approved` tinyint(100) NOT NULL DEFAULT '0',
-  `paid` tinyint(4) NOT NULL DEFAULT '0',
-  `receive_status` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `users` (
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_name` varchar(1000) DEFAULT NULL,
+  `email` varchar(1000) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'user',
+  `pass` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `age` int(100) NOT NULL,
+  `contact_no` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT '0',
+
+  PRIMARY KEY (`id`)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `date`, `shipping_address`, `first_name`, `last_name`, `total_price`, `status`, `approved`, `paid`, `receive_status`) VALUES
-(1, 2, '2018-11-04 02:21:11', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 'Ali', 'Baba', 48, 'close', 0, 1, 1),
-(2, 2, '2018-10-30 02:35:49', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 'Ali', 'Baba', 60, 'close', 0, 1, 0),
-(3, 2, '2018-11-04 02:50:47', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 'Ali', 'Baba', 72, 'close', 0, 1, 0),
-(4, 2, '2018-11-04 02:50:55', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 'Ali', 'Baba', 105, 'close', 0, 1, 0),
-(5, 2, '2018-11-06 04:23:21', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 'Ali', 'Baba', 84, 'close', 0, 1, 0);
+INSERT INTO `users` (`first_name`, `last_name`, `id`, `image_name`, `email`, `role`, `pass`, `address`, `age`, `contact_no`, `created_at`, `is_deleted`) VALUES
+('ADMIN ', 'USER', 1, '1.png', 'admin@gmail.com', 'admin', '123456', '101, Rahul Complex, 14, MG Road, Pune', 22, '1357924680', '2020-10-30 03:17:34', 0),
+('Rutuja', 'Khire', 2, '2.jpg', 'rutuja@gmail.com', 'user', '12345', '101, Rahul Complex, 14, MG Road, Pune', 20, '2468013579', '2020-11-09 15:00:27', 0),
+('Abhishek', 'Lalwani', 3, '3.jpg', 'abhi@gmail.com', 'user', '12345', '2, Swanand Bunglow , SB Road, Pune', 21, '2468013579', '2020-11-09 08:15:05', 0),
+('Ashmit', 'Khobragade', 4, '4.jpg', 'ash@gmail.comgogo', 'user', '12345', '505, Aarya Apartments, JM Road, Pune', 21, '2468013579', '2020-11-09 08:18:08', 0);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `order_list`
---
-
-CREATE TABLE `order_list` (
-  `id` int(11) NOT NULL,
-  `product_name` varchar(1000) NOT NULL,
-  `price` float NOT NULL,
-  `order_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order_list`
---
-
-INSERT INTO `order_list` (`id`, `product_name`, `price`, `order_id`, `date`) VALUES
-(1, 'Plain pizza', 6.99, 1, '2018-09-26 04:39:41'),
-(2, 'Plain pizza', 6.99, 1, '2018-09-26 04:39:41'),
-(3, 'Plain pizza', 6.99, 1, '2018-09-26 04:39:41'),
-(4, 'Plain pizza', 6.99, 1, '2018-09-26 04:39:41'),
-(5, 'Plain pizza', 6.99, 1, '2018-09-26 04:39:41'),
-(6, 'Plain pizza', 6.99, 4, '2018-09-30 02:35:42'),
-(7, 'Plain pizza', 6.99, 4, '2018-09-30 02:35:42'),
-(8, 'Plain pizza', 6.99, 4, '2018-09-30 02:35:42'),
-(9, 'Cheese pizza', 2, 5, '2018-09-30 07:25:10'),
-(10, 'Cheese pizza', 2, 6, '2018-10-05 04:49:48'),
-(11, 'Cheese pizza', 2, 6, '2018-10-05 04:49:48'),
-(12, 'Cheese pizza', 2, 6, '2018-10-05 04:49:49'),
-(13, 'Cheese pizza', 2, 6, '2018-10-05 04:49:49'),
-(14, 'Margherita pizza', 12, 7, '2018-10-16 03:18:29'),
-(15, 'Margherita pizza', 12, 7, '2018-10-16 03:18:29'),
-(16, 'Margherita pizza', 12, 7, '2018-10-16 03:18:29'),
-(17, 'Margherita pizza', 12, 7, '2018-10-16 03:18:29'),
-(18, 'Margherita pizza', 12, 7, '2018-10-16 03:18:29'),
-(19, 'Margherita pizza', 12, 8, '2018-10-16 03:19:10'),
-(20, 'Margherita pizza', 12, 8, '2018-10-16 03:19:10'),
-(21, 'Country Special', 21, 9, '2018-10-21 01:59:47'),
-(22, 'Country Special', 21, 9, '2018-10-21 01:59:47'),
-(23, 'Country Special', 21, 10, '2018-10-21 09:52:52'),
-(24, 'Country Special', 21, 10, '2018-10-21 09:52:52'),
-(25, 'Country Special', 21, 10, '2018-10-21 09:52:52'),
-(26, 'Country Special', 21, 10, '2018-10-21 09:52:52'),
-(27, 'Margherita pizza', 12, 11, '2018-10-23 02:36:53'),
-(28, 'Margherita pizza', 12, 11, '2018-10-23 02:36:53'),
-(29, 'Margherita pizza', 12, 11, '2018-10-23 02:36:53'),
-(30, 'Margherita pizza', 12, 11, '2018-10-23 02:36:54'),
-(31, 'Margherita pizza', 12, 11, '2018-10-23 02:36:54'),
-(32, 'Plain pizza', 12, 12, '2018-10-23 03:52:04'),
-(33, 'Plain pizza', 12, 12, '2018-10-23 03:52:04'),
-(34, 'Plain pizza', 12, 12, '2018-10-23 03:52:04'),
-(35, 'Plain pizza', 12, 12, '2018-10-23 03:52:04'),
-(36, 'Plain pizza', 12, 1, '2018-10-28 12:55:05'),
-(37, 'Plain pizza', 12, 1, '2018-10-28 12:55:05'),
-(38, 'Plain pizza', 12, 1, '2018-10-28 12:55:05'),
-(39, 'Plain pizza', 12, 1, '2018-10-28 12:55:05'),
-(40, 'Plain pizza', 12, 2, '2018-10-30 02:34:56'),
-(41, 'Plain pizza', 12, 2, '2018-10-30 02:34:57'),
-(42, 'Plain pizza', 12, 2, '2018-10-30 02:34:57'),
-(43, 'Plain pizza', 12, 2, '2018-10-30 02:34:57'),
-(44, 'Plain pizza', 12, 2, '2018-10-30 02:34:57'),
-(45, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(46, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(47, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(48, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(49, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(50, 'Plain pizza', 12, 3, '2018-11-04 02:21:29'),
-(51, 'Country Special', 21, 4, '2018-11-04 02:45:38'),
-(52, 'Country Special', 21, 4, '2018-11-04 02:45:38'),
-(53, 'Country Special', 21, 4, '2018-11-04 02:45:38'),
-(54, 'Country Special', 21, 4, '2018-11-04 02:45:38'),
-(55, 'Country Special', 21, 4, '2018-11-04 02:45:38'),
-(56, 'Margherita pizza ', 21, 5, '2018-11-04 03:02:43'),
-(57, 'Margherita pizza ', 21, 5, '2018-11-04 03:02:43'),
-(58, 'Margherita pizza ', 21, 5, '2018-11-04 03:02:43'),
-(59, 'Margherita pizza ', 21, 5, '2018-11-04 03:02:43');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `products`
@@ -146,111 +68,87 @@ CREATE TABLE `products` (
   `status` varchar(100) NOT NULL DEFAULT 'In Stock',
   `unit` int(100) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
-  `is_deleted` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `is_deleted` int(1) NOT NULL DEFAULT '0',
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `product_name`, `image_name`, `product_price`, `status`, `unit`, `description`, `is_deleted`) VALUES
-(11, 'Plain Pizza ', '11.jpg', 12, 'In Stock', 21, 'dsadas', 0),
-(12, 'Country Special', '12.jpg', 21, 'In Stock', 21, '2121', 0),
-(13, 'Chicken pizza', '13.jpg', 21, 'In Stock', 21, 'sw', 0),
-(14, 'Pizza', '14.jpg', 21, 'In Stock', 21, 'dsadsad', 0),
-(15, 'Plain Pizza', '15.jpg', 12, 'In Stock', 2, '2121', 0),
-(16, 'Paneer Pizza', '16.jpg', 212, 'In Stock', 21212, 'dasdsadsa', 0),
-(17, 'Margherita pizza ', '17.jpg', 21, 'In Stock', 21, '2121', 0);
+(11, 'Chicken Pizza', '11.jpg', 450, 'In Stock', 25, 'An Italian favorite, this chicken pizza is a delicious mix of flat bread or base topped with cheese, chillies, onion, garlic sauce and chunks of chicken. Tossed to perfection, it is the solution to all those chicken and cheese cravings.', 0),
+(12, 'BBQ Pizza', '12.jpg', 450, 'In Stock', 25, 'This is a classic BBQ chicken pizza with tangy BBQ sauce, chicken, and red onion. Gouda cheese gives the pizza the most delicious smoky flavor and cilantro adds a touch of freshness.', 0),
+(13, 'Pepperoni Pizza', '13.jpg', 450, 'In Stock', 25, 'Pepperoni pizza has an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. It is characteristically soft, slightly smoky, and bright red in color.', 0),
+(14, 'Veggie Delight', '14.jpg', 400, 'In Stock', 25, 'Bursting with rich aroma of herbs & spices and flavours, this pizza is made with the combination of delicious vegetables like broccoli, onion, capsicum, carrot, mushroom and cauliflower along with tomatoes, pizza sauce, and goat cheese.', 0),
+(15, 'Paneer Pizza', '15.jpg', 400, 'In Stock', 25, 'Delicious paneer with crisp capsicum and spicy red pepper - quite a mouthful!', 0),
+(16, 'Margherita', '16.jpg', 350, 'In Stock', 25, 'The hugely popular margherita, with a tasty-tangy single cheese topping', 0),
+(17, 'Garlic Bread', NULL, 125, 'In Stock', 25, 'The endearing tang of garlic in breadstics baked to perfection.', 0),
+(18, 'Choco Lava Cake', NULL, 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
+(19, 'Coca Cola', NULL, 25, 'In Stock', 25, '--', 0),
+(20, 'Cold Coffee', NULL, 50, 'In Stock', 25, '--', 0);
 
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `shipping_address` varchar(100) NOT NULL,
+  `first_name` varchar(100) DEFAULT '',
+  `last_name` varchar(100) DEFAULT '',
+  `total_price` float NOT NULL,
+  `status` varchar(100) NOT NULL DEFAULT 'pending',
+  `approved` tinyint(100) NOT NULL DEFAULT '0',
+  `paid` tinyint(4) NOT NULL DEFAULT '0',
+  `receive_status` tinyint(4) NOT NULL DEFAULT '0',
+
+  PRIMARY KEY(`id`),
+  FOREIGN KEY(`user_id`) REFERENCES users(`id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `date`, `shipping_address`, `first_name`, `last_name`, `total_price`, `status`, `approved`, `paid`, `receive_status`) VALUES
+ (1, 2, '2020-11-04 02:21:11', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 600, 'close', 0, 1, 1),
+ (2, 2, '2020-11-20 02:35:49', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 775, 'close', 0, 1, 0),
+ (3, 2, '2021-11-27 02:50:47', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 550, 'close', 0, 1, 0),
+ (4, 2, '2020-12-04 02:50:55', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 400, 'close', 0, 1, 0),
+ (5, 2, '2020-12-06 04:23:21', '101, Rahul Complex, 14, MG Road, Pune', 'Rutuja', 'Khire', 1150, 'close', 0, 1, 0); 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `order_list`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `order_list` (
   `id` int(11) NOT NULL,
-  `image_name` varchar(1000) DEFAULT NULL,
-  `email` varchar(1000) NOT NULL,
-  `role` varchar(100) NOT NULL DEFAULT 'user',
-  `pass` varchar(100) NOT NULL,
-  `first_name` varchar(1000) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `age` int(100) NOT NULL,
-  `contact_no` varchar(100) NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `is_deleted` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `order_id` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `image_name`, `email`, `role`, `pass`, `first_name`, `last_name`, `address`, `age`, `contact_no`, `created_at`, `is_deleted`) VALUES
-(1, '1.png', 'admin@gmail.com', 'admin', '123456', 'cheam ', 'hau han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 21, '174353910', '2018-09-10 03:17:34', 0),
-(2, '2.jpg', 'ali@gmail.com', 'user', '123456', 'Ali', 'Baba', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 25, '174353910', '2018-09-10 15:00:27', 0),
-(3, '3.jpg', 'baba@gmail.com', 'user', '123456', 'cheam', 'hau han', 'kedah', 16, '174353910', '2018-09-16 08:15:05', 1),
-(4, '4.jpg', 'ali@gmail.comgogo', 'user', '123456', 'cheam', 'han', '23', 16, '174353910', '2018-09-16 08:18:08', 1),
-(10, '10.jpg', '2B@gmail.com', 'user', '123456', '2B', '2B', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 19, '174353910', '2018-10-06 04:57:48', 0),
-(11, '11.png', 'hauhan1993@gmail.com', 'user', '', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 22, '174353910', '2018-10-15 14:52:26', 0),
-(12, NULL, 'dada@gmail.com', 'user', '123456', 'cheam', 'han', 'kedah', 16, '174353910', '2018-10-21 01:59:14', 1),
-(13, '13.png', 'yrtrwtrere@gmail.com', 'user', '123456', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 16, '174353910', '2018-10-21 09:20:43', 0),
-(14, '14.jpg', 'admin@gmail.comfafaf', 'user', '123456', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 16, '174353910', '2018-10-21 09:22:29', 0),
-(15, '15.png', 'dswqd@gmail.com', 'user', '123456', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 16, '174353910', '2018-10-21 09:23:25', 0),
-(16, '16.jpg', 'ff@gmail.com', 'user', '123456', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 16, '174353910', '2018-10-21 09:23:39', 0),
-(17, '17.png', 'admibvn@gmail.com', 'user', '123456', 'cheam', 'han', '16,Lorong 66,Taman Patani Jaya,08000,Sungai Petani,Kedah', 16, '174353910', '2018-10-21 09:24:33', 0),
-(18, NULL, 'fdvn@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:25:52', 1),
-(19, NULL, 'g@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:26:15', 1),
-(20, NULL, 'g@gmail.com22', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:26:44', 1),
-(21, NULL, 'g@gmail.com22ds', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:28:10', 1),
-(22, NULL, 'gdsa@gmail.com22ds', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:30:48', 1),
-(23, NULL, 'trexn@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:31:42', 1),
-(24, NULL, 'hans@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-21 09:32:31', 1),
-(25, NULL, 'jaja@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-23 03:51:41', 0),
-(26, NULL, 'VWZEJFQCVT@gmail.com', 'user', '123456', 'Harry', 'Flores', '24', 0, '0123456672', '2018-10-29 14:22:19', 0),
-(27, NULL, 'rara@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-29 14:23:31', 0),
-(28, NULL, '91TDNH60XT@gmail.com', 'user', '123456', 'Lily', 'Robinson', '35', 0, '0152263391', '2018-10-29 14:24:19', 0),
-(29, NULL, 'dsadsad@gmail.com', 'user', '123456', 'cheam', 'han', '21', 16, '174353910', '2018-10-29 14:24:37', 0),
-(30, NULL, 'ESBJUHPB6I@gmail.com', 'user', '123456', 'Alice', 'Robinson', '50', 0, '0182223333', '2018-10-29 14:26:02', 0),
-(31, NULL, 'RLQBKAAGDD@gmail.com', 'user', '123456', 'Taurus', 'Phillips', '12', 0, '0132223901', '2018-10-29 14:26:46', 0),
-(32, NULL, 'J3UZFUJA9Y@gmail.com', 'user', '123456', 'Ron', 'Robinson', '33', 0, '0123456672', '2018-10-29 14:27:29', 0),
-(33, NULL, '3WMUP2GGJR@gmail.com', 'user', '123456', 'Taurus', 'Brown', '37', 0, '0189223711', '2018-10-29 14:28:20', 0),
-(34, NULL, '19BLDEWN44@gmail.com', 'user', '123456', 'Ron', 'Williams', '36', 0, '0116227381', '2018-10-29 14:32:12', 0),
-(35, NULL, '1B0QVU7WS0@gmail.com', 'user', '123456', 'Shiny', 'Smith', '9', 0, '0152263391', '2018-10-30 02:59:02', 0),
-(36, NULL, 'I6BH5VX0LS@gmail.com', 'user', '123456', 'Harry', 'Williams', '18', 0, '0123456672', '2018-10-30 03:05:49', 0);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `order_list`
---
-ALTER TABLE `order_list`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+--
+-- AUTO_INCREMENT for table `order_list`
+--
+ALTER TABLE `order_list`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `order_list`
+  ADD FOREIGN KEY (`user_id`)
+        REFERENCES users(`id`);
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -259,22 +157,11 @@ ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `order_list`
---
-ALTER TABLE `order_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
-
---
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
