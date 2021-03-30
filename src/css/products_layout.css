@@ -4,13 +4,13 @@
 }
 
 .product-card {
- flex: 1 16%;
+ flex: 1 20%;
 }
 
 img.img-thumbnail
 {
-	width:200px;
-	height:200px;
+	width:250px;
+	height:250px;
 }
 
 .product-name {
