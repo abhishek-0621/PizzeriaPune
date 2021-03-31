@@ -125,7 +125,7 @@
 				<div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Contact No</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" placeholder="Password" name="contact_no">
+				      <input type="text" class="form-control" placeholder="Enter Contact no." name="contact_no">
 				    </div>
 				</div>
 

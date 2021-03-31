@@ -70,7 +70,7 @@
                  <?php if($row['status'] == 'shipping') :?>
                 <td style="color:orange" class="font-weight-bold">Shipping Now</td>
                <?php else : ?>
-                  <td style="color:green" class="font-weight-bold">Paid (waiting to be approve)</td>
+                  <td style="color:green" class="font-weight-bold">Paid (waiting to be approved)</td>
 
                  <?php endif; ?>
 
@@ -79,7 +79,7 @@
 
 
          <?php if($row['paid'] == 0) :?>
-        <td style="color:green"><a href="#payment_modal" data-toggle="modal"><i>open payment</i></a></td>
+        <td style="color:green"><a href="#payment_modal" data-toggle="modal"><i>Open payment</i></a></td>
           <?php endif; ?>
 		</tr>
 		<?php $i++; ?>
@@ -122,7 +122,7 @@
       
 
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Card No</label>
+            <label class="col-sm-3 col-form-label">Card No.</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" name="">
             </div>
@@ -130,7 +130,7 @@
 
 
             <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Password</label>
+            <label class="col-sm-3 col-form-label">CVV</label>
             <div class="col-sm-9">
               <input type="password" class="form-control" name="pass">
             </div>
