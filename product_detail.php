@@ -71,7 +71,7 @@
 				    </div>
 				
 				    <div class="form-group">
-				      	<label>Price: (RM)</label>
+				      	<label>Price: (Rs.)</label>
 				      	<input type="text" class="form-control" value="<?php echo $row['product_price'] ?>" name="product_price"/>	  
 				    </div>
 

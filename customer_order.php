@@ -62,7 +62,7 @@
 	   	<td><?php echo $row['first_name']?></td>
 		<td><?php echo $row['last_name']?></td>
 		<td><?php echo $row['shipping_address']?></td>
-        <td>RM <?php echo $row['total_price']?></td>
+        <td>Rs. <?php echo $row['total_price']?></td>
         
 		<td><?php echo $row['date']?></td>
 
