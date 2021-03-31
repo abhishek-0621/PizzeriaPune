@@ -28,12 +28,11 @@ img.img-thumbnail
 	display: inline ;
 }
 
-#Add_product_btn{
+.Add_product_btn{
      position:fixed;
      bottom:0;
      right:0;
 	 margin-bottom: 10px;
-	 color: #00084b;
 }
 
 .product-info {
