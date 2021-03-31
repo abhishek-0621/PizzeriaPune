@@ -83,10 +83,10 @@ INSERT INTO `products` (`id`, `product_name`, `image_name`, `product_price`, `st
 (14, 'Veggie Delight', '14.jpg', 400, 'In Stock', 25, 'Bursting with rich aroma of herbs & spices and flavours, this pizza is made with the combination of delicious vegetables like broccoli, onion, capsicum, carrot, mushroom and cauliflower along with tomatoes, pizza sauce, and goat cheese.', 0),
 (15, 'Paneer Pizza', '15.jpg', 400, 'In Stock', 25, 'Delicious paneer with crisp capsicum and spicy red pepper - quite a mouthful!', 0),
 (16, 'Margherita', '16.jpg', 350, 'In Stock', 25, 'The hugely popular margherita, with a tasty-tangy single cheese topping', 0),
-(17, 'Garlic Bread', NULL, 125, 'In Stock', 25, 'The endearing tang of garlic in breadstics baked to perfection.', 0),
-(18, 'Choco Lava Cake', NULL, 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
-(19, 'Coca Cola', NULL, 25, 'In Stock', 25, '--', 0),
-(20, 'Cold Coffee', NULL, 50, 'In Stock', 25, '--', 0);
+(17, 'Garlic Bread', '17.jpg', 125, 'In Stock', 25, 'The endearing tang of garlic in breadstics baked to perfection.', 0),
+(18, 'Choco Lava Cake', '18.jpg', 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
+(19, 'Coca Cola', '19.jpg', 25, 'In Stock', 25, '--', 0),
+(20, 'Nachos', '20.jpg', 50, 'In Stock', 25, 'Nachos are a Mexican regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese (or a cheese-based sauce), often served as a snack or appetize', 0);
 
 --
 -- Table structure for table `orders`
