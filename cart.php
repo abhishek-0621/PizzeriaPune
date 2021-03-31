@@ -55,7 +55,7 @@ $i=1;
 					  		
 					  		<td><?php echo $i; ?></td>
 					  		<td><?php echo $row['product_name']; ?></td>
-					  		<td>RM <?php echo $row['product_price']; ?></td>
+					  		<td>Rs. <?php echo $row['product_price']; ?></td>
 					  		<td><a href="delete_cart_process.php?remove=<?php echo $key; ?>">Remove</a></td>
 					  	</tr>
 
@@ -76,7 +76,7 @@ $i=1;
 
 					<tr>
 						<td colspan="2"><strong>Total Price</strong></td>
-						<td ><strong>RM <?php echo $total; ?></strong></td>
+						<td ><strong>Rs. <?php echo $total; ?></strong></td>
 
 
 						<td><a class="btn btn-info" style="color:white" data-toggle="modal" data-target="#checkout_Modal">Check Out</a></td>
@@ -87,7 +87,7 @@ $i=1;
 
 				<?php else:?> <!--check if session cart not isset do else-->
 					<tr>
-						<td>No Item In Cart</td>	
+						<td>No Item in Cart</td>	
 					</tr>
 				<?php endif;?> <!--end if-->
 
