@@ -84,9 +84,9 @@ INSERT INTO `products` (`id`, `product_name`, `image_name`, `product_price`, `st
 (15, 'Paneer Pizza', '15.jpg', 400, 'In Stock', 25, 'Delicious paneer with crisp capsicum and spicy red pepper - quite a mouthful!', 0),
 (16, 'Margherita', '16.jpg', 350, 'In Stock', 25, 'The hugely popular margherita, with a tasty-tangy single cheese topping', 0),
 (17, 'Garlic Bread', '17.jpg', 125, 'In Stock', 25, 'The endearing tang of garlic in breadstics baked to perfection.', 0),
-(18, 'Choco Lava Cake', '18.jpg', 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
-(19, 'Coca Cola', '19.jpg', 25, 'In Stock', 25, '--', 0),
-(20, 'Nachos', '20.jpg', 50, 'In Stock', 25, 'A regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese (or a cheese-based sauce), often served as a snack or appetize', 0);
+(18, 'Nachos', '20.jpg', 50, 'In Stock', 25, 'A regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese (or a cheese-based sauce), often served as a snack or appetize', 0),
+(19, 'Choco Lava Cake', '18.jpg', 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
+(20, 'Coca Cola', '19.jpg', 25, 'In Stock', 25, '--', 0);
 
 --
 -- Table structure for table `orders`
