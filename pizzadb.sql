@@ -78,7 +78,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `product_name`, `image_name`, `product_price`, `status`, `unit`, `description`, `is_deleted`) VALUES
 (11, 'Chicken Pizza', '11.jpg', 450, 'In Stock', 25, 'An Italian favorite, this chicken pizza is a delicious mix of flat bread or base topped with cheese, chillies, onion, garlic sauce and chunks of chicken. Tossed to perfection, it is the solution to all those chicken and cheese cravings.', 0),
-(12, 'BBQ Pizza', '12.jpg', 450, 'In Stock', 25, 'This is a classic BBQ chicken pizza with tangy BBQ sauce, chicken, and red onion. Gouda cheese gives the pizza the most delicious smoky flavor and cilantro adds a touch of freshness.', 0),
+(12, 'Corn Pizza', '12.jpg', 400, 'In Stock', 25, 'Prepared using spicy sauce, corn, mozzarella, parmesan, and cheddar cheese, this one is a pizza lover’s dream come true.', 0),
 (13, 'Pepperoni Pizza', '13.jpg', 450, 'In Stock', 25, 'Pepperoni pizza has an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper. It is characteristically soft, slightly smoky, and bright red in color.', 0),
 (14, 'Veggie Delight', '14.jpg', 400, 'In Stock', 25, 'Bursting with rich aroma of herbs & spices and flavours, this pizza is made with the combination of delicious vegetables like broccoli, onion, capsicum, carrot, mushroom and cauliflower along with tomatoes, pizza sauce, and goat cheese.', 0),
 (15, 'Paneer Pizza', '15.jpg', 400, 'In Stock', 25, 'Delicious paneer with crisp capsicum and spicy red pepper - quite a mouthful!', 0),
