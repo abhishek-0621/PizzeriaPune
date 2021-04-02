@@ -16,7 +16,7 @@
 		{	
 			$login_role = $_SESSION['login_role'];
 		}
-		$sql = "SELECT * FROM `products` WHERE `status`='In Stock'  ORDER BY `product_name` ASC";
+		$sql = "SELECT * FROM `products` WHERE `status`='In Stock'  ORDER BY `id` ASC";
 		$result = mysqli_query($conn,$sql);
 		
 ?>
