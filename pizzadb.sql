@@ -127,17 +127,29 @@ INSERT INTO `orders` (`id`, `user_id`, `date`, `shipping_address`, `first_name`,
 --
 
 CREATE TABLE `order_list` (
-  `id` int(11) NOT NULL,
+  `srno` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `price` float NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`srno`),
   FOREIGN KEY (`order_id`)
     REFERENCES orders(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 --
+-- Dumping data for table `order_list`
+--
+
+INSERT INTO `order_list` (`srno`, `order_id`, `price`, `date`) VALUES
+(100, 1, 600, '2020-11-04 02:21:11'),
+(101, 2, 775, '2020-11-20 02:35:49'),
+(102, 3, 550, '2021-11-27 02:50:47'),
+(103, 4, 400, '2020-12-04 02:50:55'),
+(104, 4, 1150, '2020-12-06 04:23:21');
+
+
 -- AUTO_INCREMENT for dumped tables
 --
 --
