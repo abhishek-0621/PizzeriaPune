@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+-- Generation Time: Nov 08, 2018 at 03:37 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -53,7 +54,7 @@ INSERT INTO `users` (`first_name`, `last_name`, `id`, `image_name`, `email`, `ro
 ('ADMIN ', 'USER', 1, NULL, 'admin@gmail.com', 'admin', '123456', '101, Rahul Complex, 14, MG Road, Pune', 22, '1357924680', '2020-10-30 03:17:34', 0),
 ('Rutuja', 'Khire', 2, '2.jpg', 'rutuja@gmail.com', 'user', '12345', '101, Rahul Complex, 14, MG Road, Pune', 20, '2468013579', '2020-11-09 15:00:27', 0),
 ('Abhishek', 'Lalwani', 3, '3.jpg', 'abhi@gmail.com', 'user', '12345', '2, Swanand Bunglow , SB Road, Pune', 21, '2468013579', '2020-11-09 08:15:05', 0),
-('Ashmit', 'Khobragade', 4, '4.jpg', 'ash@gmail.comgogo', 'user', '12345', '505, Aarya Apartments, JM Road, Pune', 21, '2468013579', '2020-11-09 08:18:08', 0);
+('Ashmit', 'Khobragade', 4, '4.jpg', 'ash@gmail.com', 'user', '12345', '505, Aarya Apartments, JM Road, Pune', 21, '2468013579', '2020-11-09 08:18:08', 0);
 
 --
 -- Table structure for table `products`
@@ -84,9 +85,9 @@ INSERT INTO `products` (`id`, `product_name`, `image_name`, `product_price`, `st
 (15, 'Paneer Pizza', '15.jpg', 400, 'In Stock', 25, 'Delicious paneer with crisp capsicum and spicy red pepper - quite a mouthful!', 0),
 (16, 'Margherita', '16.jpg', 350, 'In Stock', 25, 'The hugely popular margherita, with a tasty-tangy single cheese topping', 0),
 (17, 'Garlic Bread', '17.jpg', 125, 'In Stock', 25, 'The endearing tang of garlic in breadstics baked to perfection.', 0),
-(18, 'Nachos', '20.jpg', 50, 'In Stock', 25, 'A regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese (or a cheese-based sauce), often served as a snack or appetize', 0),
-(19, 'Choco Lava Cake', '18.jpg', 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
-(20, 'Coca Cola', '19.jpg', 25, 'In Stock', 25, '--', 0);
+(18, 'Choco Lava Cake', '18.jpg', 125, 'In Stock', 25, 'Filled with delecious molten chocolate inside.', 0),
+(19, 'Coca Cola', '19.jpg', 25, 'In Stock', 25, '--', 0),
+(20, 'Nachos', '20.jpg', 50, 'In Stock', 25, 'A regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese (or a cheese-based sauce), often served as a snack or appetize', 0);
 
 --
 -- Table structure for table `orders`
@@ -128,15 +129,12 @@ INSERT INTO `orders` (`id`, `user_id`, `date`, `shipping_address`, `first_name`,
 CREATE TABLE `order_list` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `product_id` int(10) NOT NULL,
   `price` float NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
   PRIMARY KEY (`id`),
   FOREIGN KEY (`order_id`)
-    REFERENCES orders(`id`),
-  FOREIGN KEY (`product_id`)
-    REFERENCES products(`id`)
+    REFERENCES orders(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -151,8 +149,7 @@ ALTER TABLE `order_list`
 --
 -- AUTO_INCREMENT for table `orders`
 --
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `orders` AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
